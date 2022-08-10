@@ -11,7 +11,10 @@ db.once('open',()=>console.log("Connected to database"));
 //Using middlewares
 app.use(express.json());
 app.use(cors());
+//Using routes
+app.use('/education',require('./routes/education'))
 app.use('/',require('./routes/about'))
+//Listening on port
 app.listen(process.env.PORT,()=>{
     console.log("Listening on port 5000");
 })
