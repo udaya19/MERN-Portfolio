@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 //Using routes
 app.use('/education',require('./routes/education'))
+app.use('/experience',require('./routes/experience'))
 app.use('/',require('./routes/about'))
 //Listening on port
 app.listen(process.env.PORT,()=>{
