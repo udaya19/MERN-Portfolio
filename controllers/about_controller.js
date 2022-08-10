@@ -1,3 +1,5 @@
+const About = require('../models/about');
+
 exports.getAbout = (req,res)=>{
     res.send("About route");
 }
