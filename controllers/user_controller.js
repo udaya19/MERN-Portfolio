@@ -66,3 +66,20 @@ exports.loginUser = async (req,res)=>{
         })
     }
 }
+
+exports.logOut = (req,res)=>{
+    try {
+        return res.status(200).cookie("token",null,{
+            expires:new Date(Date.now()),
+            httpOnly:true
+        }).json({
+            message:"Log out successful",
+            success:true
+        })
+    } catch (error) {
+        return res.json(500,{
+            message:error.message,
+            success:false
+        })
+    }
+}

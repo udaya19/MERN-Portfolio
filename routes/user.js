@@ -6,8 +6,6 @@ router.post('/register',userController.registerUser)
 
 router.get('/login',userController.loginUser)
 
-router.post('/verify',(req,res)=>{
-    res.send("Verify");
-})
+router.get('/logout',userController.logOut);
 
 module.exports = router;
