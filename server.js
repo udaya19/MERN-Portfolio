@@ -24,6 +24,7 @@ app.use('/user',require('./routes/user'));
 app.use('/education',require('./routes/education'));
 app.use('/experience',require('./routes/experience'));
 app.use('/projects',require('./routes/project'));
+app.use('/upload',require('./routes/upload'));
 app.use('/',require('./routes/about'));
 //Listening on port
 app.listen(process.env.PORT,()=>{
