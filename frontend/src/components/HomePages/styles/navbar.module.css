@@ -37,7 +37,7 @@ nav{
 }
 
 .animatedBar.bar1{
-    transform: rotate(-45deg) translate((-5px,5px));
+    transform: rotate(-45deg) translate(-5px,5px);
     background-color: white;
     width: 30px;
 }
@@ -45,7 +45,7 @@ nav{
    opacity: 0;
 }
 .animatedBar.bar3{
-    transform: rotate(45deg) translate((-4px,-5px));
+    transform: rotate(45deg) translate(-4px,-5px);
     background-color: white;
     width: 30px;
 }

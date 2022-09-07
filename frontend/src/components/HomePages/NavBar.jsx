@@ -21,9 +21,9 @@ const NavBar = () => {
                         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className={styles.logoImg} alt="logo" />
                     </Link>
                     <div className={styles.btn} onClick={actToggle}>
-                        <div className={styles.bar1}></div>
-                        <div className={styles.bar2}></div>
-                        <div className={styles.bar3}></div>
+                        <div className={toggle?`${styles.bar1} ${styles.animatedBar}`:`${styles.bar} ${styles.bar1}`}></div>
+                        <div className={toggle?`${styles.bar2} ${styles.animatedBar}`:`${styles.bar} ${styles.bar2}`}></div>
+                        <div className={toggle?`${styles.bar3} ${styles.animatedBar}`:`${styles.bar} ${styles.bar3}`}></div>
                     </div>
                 </div>
                 <div className={styles.linksContainer}>
