@@ -1,5 +1,5 @@
 import './App.css';
-// import Header from './components/HomePages/Header';
+import Header from './components/HomePages/Header';
 // import About from './components/HomePages/About';
 // import Contact from './components/HomePages/Contact';
 // import Education from './components/HomePages/Education';
@@ -22,6 +22,10 @@ function App() {
     <div className="App">
      {/* NavBar component */}
      <NavBar />
+     {/* <Header /> */}
+     <Routes>
+        <Route exact path='/' element={<Header />}/>
+     </Routes>
     </div>
   );
 }
