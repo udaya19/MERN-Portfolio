@@ -1,0 +1,14 @@
+.about{
+    /* margin-top: 0.5rem; */
+    margin-left: 5%;
+}
+
+.title{
+    color: rgb(10,93,118);
+    font-style: italic;
+    font-size: 1.7rem;
+    border-bottom: 1px dashed rgb(9,93,119);
+}
+.aboutInfo p{
+    font-size: 1.2rem;
+}

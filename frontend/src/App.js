@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/HomePages/Header';
-// import About from './components/HomePages/About';
+import About from './components/HomePages/About';
 // import Contact from './components/HomePages/Contact';
 // import Education from './components/HomePages/Education';
 // import Experience from './components/HomePages/Experience';
@@ -25,6 +25,9 @@ function App() {
      {/* <Header /> */}
      <Routes>
         <Route exact path='/' element={<Header />}/>
+     </Routes>
+     <Routes>
+        <Route exact path='/' element={<About />}/>
      </Routes>
     </div>
   );
