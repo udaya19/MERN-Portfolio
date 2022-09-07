@@ -1,0 +1,114 @@
+*{
+    overflow: hidden;
+}
+.navContainer{
+    background-color: rgb(9,93,119);
+    margin: 0 auto;
+    max-width: 100%;
+    position: static;
+    top: 0;
+    z-index: 10;
+}
+nav{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logoBtn{
+    display: flex;
+    padding: 5px 10px;
+    border-bottom: 1px solid rgb(168,168,168);
+    align-items: center;
+    justify-content: space-between;
+}
+.logoImg{
+    width: 50px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 3px lightgray;
+}
+
+.bar1,.bar2,.bar3{
+    background-color: lightgray;
+    width: 35px;
+    padding: 1px;
+    margin: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.animatedBar.bar1{
+    transform: rotate(-45deg) translate((-5px,5px));
+    background-color: white;
+    width: 30px;
+}
+.animatedBar.bar2{
+   opacity: 0;
+}
+.animatedBar.bar3{
+    transform: rotate(45deg) translate((-4px,-5px));
+    background-color: white;
+    width: 30px;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.links{
+    width: 100%;
+    background-color: rgb(9,93,119);
+    z-index: 10;
+    opacity: 1;
+    transition: transform 0.4s ease-in-out;
+}
+
+.newLinks{
+    width: 100%;
+    transform: translateX(0%);
+    position: fixed;
+    top: 51;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.links li{
+    list-style: none;
+}
+
+.links li a{
+    display: block;
+    padding: 10px;
+    color: lightgray;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+.links li a:hover{
+    padding: 10px 25px;
+    color: white;
+}
+
+.adminLi{
+    color: rgb(93,241,93);
+}
+
+@media screen and (min-width:800px) {
+    .logoBtn{
+        border: none;
+        padding: 0;
+    }
+    .bar1,.bar2,.bar3{
+        display: none;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        align-items: center;
+    }
+    .links{
+        display: flex;
+        position: relative;
+    }
+}
