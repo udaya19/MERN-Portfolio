@@ -60,6 +60,7 @@ nav{
     z-index: 10;
     opacity: 1;
     transition: transform 0.4s ease-in-out;
+    display: block;
 }
 
 .newLinks{
@@ -70,6 +71,9 @@ nav{
     bottom: 0;
     left: 0;
     right: 0;
+}
+.newLinks.links{
+    display: none;
 }
 .links li{
     list-style: none;

@@ -1,7 +1,17 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/navbar.module.css';
 const NavBar = () => {
+    const [toggle,setToggle] = useState(false);
+    const actToggle = ()=>{
+        setToggle(!toggle);
+    }
+    const closeNavBar = ()=>{
+        if(toggle === true){
+            setToggle(false);
+        }
+    }
     return ( 
     <div>
         <div className={styles.navContainer}>
@@ -10,14 +20,14 @@ const NavBar = () => {
                     <Link to='/'>
                         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className={styles.logoImg} alt="logo" />
                     </Link>
-                    <div className='btn'>
+                    <div className={styles.btn} onClick={actToggle}>
                         <div className={styles.bar1}></div>
                         <div className={styles.bar2}></div>
                         <div className={styles.bar3}></div>
                     </div>
                 </div>
                 <div className={styles.linksContainer}>
-                    <ul className={styles.links}>
+                    <ul className={toggle?`${styles.newLinks} ${styles.links}`:styles.links} onClick={closeNavBar}>
                             <li><Link to='/' >Home</Link></li> 
                             <li><Link to='/' >About</Link></li> 
                             <li><Link to='/' >Education</Link></li> 
