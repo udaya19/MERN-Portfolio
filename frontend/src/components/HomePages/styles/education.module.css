@@ -1,0 +1,25 @@
+.title{
+    color: rgb(10,93,118);
+    font-style: italic;
+    font-size: 1.7rem;
+    border-bottom: 1px dashed rgb(9,93,119);
+}
+.education{
+    margin-left: 5%;
+}
+
+.singleEducation{
+    color: white;
+    background-color: rgb(17,115,145);
+    margin-bottom: 20px;
+    padding: 5px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    max-width: 80%;
+}
+
+.singleEducation p{
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+

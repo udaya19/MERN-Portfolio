@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/HomePages/Header';
 import About from './components/HomePages/About';
 // import Contact from './components/HomePages/Contact';
-// import Education from './components/HomePages/Education';
+import Education from './components/HomePages/Education';
 // import Experience from './components/HomePages/Experience';
 // import Footer from './components/HomePages/Footer';
 // import Login from './components/HomePages/Login';
@@ -28,6 +28,9 @@ function App() {
      </Routes>
      <Routes>
         <Route exact path='/' element={<About />}/>
+     </Routes>
+     <Routes>
+        <Route exact path='/' element={<Education />}/>
      </Routes>
     </div>
   );
