@@ -4,7 +4,7 @@ import About from './components/HomePages/About';
 // import Contact from './components/HomePages/Contact';
 import Education from './components/HomePages/Education';
 import Experience from './components/HomePages/Experience';
-// import Footer from './components/HomePages/Footer';
+import Footer from './components/HomePages/Footer';
 // import Login from './components/HomePages/Login';
 import NavBar from './components/HomePages/NavBar';
 import Projects from './components/HomePages/Projects';
@@ -37,6 +37,9 @@ function App() {
      </Routes>
      <Routes>
         <Route exact path='/' element={<Experience />}/>
+     </Routes>
+     <Routes>
+        <Route exact path='/' element={<Footer />}/>
      </Routes>
     </div>
   );
