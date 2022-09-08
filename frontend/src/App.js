@@ -7,7 +7,7 @@ import Education from './components/HomePages/Education';
 // import Footer from './components/HomePages/Footer';
 // import Login from './components/HomePages/Login';
 import NavBar from './components/HomePages/NavBar';
-// import Projects from './components/HomePages/Projects';
+import Projects from './components/HomePages/Projects';
 //Admin component
 // import Admin from './components/AdminComponents/Admin';
 //Edit components
@@ -31,6 +31,9 @@ function App() {
      </Routes>
      <Routes>
         <Route exact path='/' element={<Education />}/>
+     </Routes>
+     <Routes>
+        <Route exact path='/' element={<Projects />}/>
      </Routes>
     </div>
   );

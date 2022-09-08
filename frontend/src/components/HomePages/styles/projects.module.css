@@ -1,0 +1,39 @@
+.projects{
+    margin-left: 5%;
+}
+
+.title{
+    color: rgb(10,93,118);
+    font-style: italic;
+    font-size: 1.7rem;
+    border-bottom: 1px dashed rgb(9,93,119);
+}
+
+.singleProject{
+    margin-bottom: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.singleProjectImg img{
+    width: 80%;
+    height: 80%;
+}
+
+.singleProjectInfo h3{
+    color: rgb(9,93,119);
+}
+
+.singleProjectInfo p{
+    font-size: 1.2rem;
+    margin-top: -5px;
+}
+
+@media screen and (min-width:800px) {
+    .singleProject{
+        display: flex;
+    }
+    .singleProjectInfo{
+        margin-left: -5%;
+    }
+}
