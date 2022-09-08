@@ -5,7 +5,7 @@ import About from './components/HomePages/About';
 import Education from './components/HomePages/Education';
 import Experience from './components/HomePages/Experience';
 import Footer from './components/HomePages/Footer';
-// import Login from './components/HomePages/Login';
+import Login from './components/HomePages/Login';
 import NavBar from './components/HomePages/NavBar';
 import Projects from './components/HomePages/Projects';
 //Admin component
@@ -38,9 +38,13 @@ function App() {
      <Routes>
         <Route exact path='/' element={<Experience />}/>
      </Routes>
-     <Routes>
+     {/* <Routes>
         <Route exact path='/' element={<Footer />}/>
+     </Routes> */}
+     <Routes>
+        <Route exact path='/login' element={<Login />}/>
      </Routes>
+     <Footer />
     </div>
   );
 }

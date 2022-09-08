@@ -1,0 +1,54 @@
+.login{
+    background: #fff;
+    padding: 40px;
+    min-height: 75vh;
+}
+
+.login h3{
+    text-align: center;
+    padding-bottom: 0.6rem;
+    color: #424242;
+    letter-spacing: 0.1rem;
+}
+
+.loginCenter{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.loginCenter form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 2px 1px rgb(11,72,92);
+    padding: 1.4rem;
+}
+
+.loginCenter form label{
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.loginCenter form input{
+    padding: 7px;
+    border:1px solid rgb(40,185,185);
+    outline: none;
+}
+
+.loginCenter form input:nth-of-type(1){
+    margin-bottom: 1px;
+}
+
+.loginCenter .loginBtn{
+    width: 100%;
+}
+
+.loginCenter button{
+    margin-top: 15px;
+    padding: 5px;
+    background-color: rgb(6,93,118);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+}
