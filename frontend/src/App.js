@@ -9,7 +9,7 @@ import Login from './components/HomePages/Login';
 import NavBar from './components/HomePages/NavBar';
 import Projects from './components/HomePages/Projects';
 //Admin component
-// import Admin from './components/AdminComponents/Admin';
+import Admin from './components/AdminComponents/Admin';
 //Edit components
 
 // import EditAbout from './components/EditComponents/EditAbout';
@@ -44,6 +44,10 @@ function App() {
      <Routes>
         <Route exact path='/login' element={<Login />}/>
      </Routes>
+     <Routes>
+        <Route exact path='/admin' element={<Admin />}/>
+     </Routes>
+
      <Footer />
     </div>
   );
