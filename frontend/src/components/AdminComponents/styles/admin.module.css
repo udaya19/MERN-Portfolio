@@ -69,10 +69,10 @@ form button:hover{
     font-weight: 400;
     margin: 0 auto;
     position: absolute;
-    top: 80px;
+    top: 5px;
     left: 50%;
     display: block;
-    transform: translate(-50%);
+    transform: translateX(-50%);
 }
 
 .sameItem .icons{
@@ -174,14 +174,22 @@ form button:hover{
     text-align: center;
     border-radius: 50%;
 }
-
+.singleExperience p{
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(17,115,145);
+    padding: 10px;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    max-width: 100%;
+}
 @media screen and (min-width:800px) {
-    /* .projectAdmin .singleProjectImg{
+    .projectAdmin .singleProjectImg{
         width: 150px;
         height: 150px;
     }
     .projectAdmin .singleProjectImg{
-        width: 275px;
+        width: 350px;
         height: 350px;
     }
     .projectAdmin .singleProjectImg img{
@@ -191,5 +199,8 @@ form button:hover{
     .projectAdmin .singleProject{
         display: flex;
         justify-content: space-between;
-    } */
+    }
+    .singleProjectInfo{
+        margin-left: 5%;
+    }
 }
