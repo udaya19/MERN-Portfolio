@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles/admin.module.css";
-import { Link } from "react-router-dom";
 import AboutAdmin from "./AboutAdmin";
 import EducationAdmin from "./EducationAdmin";
 import ExperienceAdmin from "./ExperienceAdmin";
