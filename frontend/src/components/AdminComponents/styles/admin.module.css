@@ -204,3 +204,41 @@ form button:hover{
         margin-left: 5%;
     }
 }
+
+/*Edit components*/
+
+.edit{
+    min-height: 70vh;
+}
+
+.edit .sameComponent{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.edit .sameForm .btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+.cancelBtn{
+    background-color: red;
+}
+
+.cancelBtn:hover{
+    background-color: rgb(214,51,84);
+}
+
+.updated{
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    color: green;
+}
+
+.newUpdated{
+    display: block;
+}

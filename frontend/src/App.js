@@ -12,10 +12,10 @@ import Projects from './components/HomePages/Projects';
 import Admin from './components/AdminComponents/Admin';
 //Edit components
 
-// import EditAbout from './components/EditComponents/EditAbout';
-// import EditEducation from './components/EditComponents/EditEducation';
-// import EditExperience from './components/EditComponents/EditExperience';
-// import EditProjects from './components/EditComponents/EditProjects';
+import EditAbout from './components/EditComponents/EditAbout';
+import EditEducation from './components/EditComponents/EditEducation';
+import EditExperience from './components/EditComponents/EditExperience';
+import EditProjects from './components/EditComponents/EditProjects';
 import {Routes,Route} from 'react-router-dom';
 function App() {
   return (
@@ -46,6 +46,12 @@ function App() {
      </Routes>
      <Routes>
         <Route exact path='/admin' element={<Admin />}/>
+     </Routes>
+     <Routes>
+      <Route path='/edit/:id' element={<EditAbout />} />
+      <Route path='/editEducation/:id' element={<EditEducation />} />
+      <Route path='/editProjects/:id' element={<EditProjects/>} />
+      <Route path='/editExperience/:id' element={<EditExperience />} />
      </Routes>
 
      <Footer />
