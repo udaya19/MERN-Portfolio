@@ -21,8 +21,8 @@ const About = () => {
       <div className={styles.about}>
         <div className={styles.aboutInfo}>
           <h2 className={styles.title}>About</h2>
-          {about.message.map((item) => (
-            <p>{item.about}</p>
+          {about?.message.map((item) => (
+            <p key={item._id}>{item.about}</p>
           ))}
           {/* <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nisi
