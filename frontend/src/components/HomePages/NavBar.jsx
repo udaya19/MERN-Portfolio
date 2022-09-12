@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/navbar.module.css";
-import { scroller } from "react-scroll";
+// import { scroller } from "react-scroll";
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   const actToggle = () => {
@@ -13,20 +13,20 @@ const NavBar = () => {
       setToggle(false);
     }
   };
-  const scrollToElement = (element) => {
-    scroller.scrollTo(element, {
-      duration: 800,
-      delay: 50,
-      smooth: true,
-      offset: -80,
-    });
-  };
+  // const scrollToElement = (element) => {
+  //   scroller.scrollTo(element, {
+  //     duration: 800,
+  //     delay: 50,
+  //     smooth: true,
+  //     offset: -80,
+  //   });
+  // };
   return (
     <div>
       <div className={styles.navContainer}>
         <nav>
           <div className={styles.logoBtn}>
-            <Link to="/" onClick={() => scrollToElement("Home")}>
+            <Link to="/">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
                 className={styles.logoImg}
@@ -65,29 +65,21 @@ const NavBar = () => {
               onClick={closeNavBar}
             >
               <li>
-                <Link to="/" onClick={() => scrollToElement("Home")}>
-                  Home
-                </Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/" onClick={() => scrollToElement("About")}>
-                  About
-                </Link>
+                <Link to="/">About</Link>
               </li>
               <li>
-                <Link to="/" onClick={() => scrollToElement("Education")}>
-                  Education
-                </Link>
+                <Link to="/">Education</Link>
               </li>
               <li>
-                <Link to="/" onClick={() => scrollToElement("Experience")}>
+                <Link to="/" n>
                   Experience
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={() => scrollToElement("Projects")}>
-                  Projects
-                </Link>
+                <Link to="/">Projects</Link>
               </li>
               {/* <li>
                 <Link  to="/"  onClick={() => scrollToElement("Home")}>Contact</Link>

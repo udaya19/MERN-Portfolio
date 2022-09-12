@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
+      {/* 
       <Element className="Home">
         <Header />
       </Element>
@@ -41,13 +41,24 @@ function App() {
 
       <Element className="Experience">
         <Experience />
-      </Element>
-
+      </Element> */}
       <Routes>
-        <Route exact path="/login" element={<Login />} />
+        <Route path="/" element={<Header />} />
       </Routes>
       <Routes>
-        <Route exact path="/admin" element={<Admin />} />
+        <Route path="/" element={<About />} />
+      </Routes>
+      <Routes>
+        <Route path="/" element={<Education />} />
+      </Routes>
+      <Routes>
+        <Route path="/" element={<Projects />} />
+      </Routes>
+      <Routes>
+        <Route path="/" element={<Experience />} />
+      </Routes>
+      <Routes>
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Routes>
         <Route path="/edit/:id" element={<EditAbout />} />
