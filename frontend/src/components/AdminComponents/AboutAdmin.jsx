@@ -62,7 +62,7 @@ const AboutAdmin = () => {
         {aboutData?.message.map((item) => (
           <div className={styles.aboutInfo} key={item._id}>
             <div className={styles.icons}>
-              <Link to="/edit">
+              <Link to={`/edit/${item._id}`}>
                 <span className={styles.editIcon}>
                   <i className="fas fa-edit"></i>
                 </span>
