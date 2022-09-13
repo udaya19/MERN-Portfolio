@@ -21,24 +21,13 @@ const Education = () => {
     <div className={styles.mainContainer}>
       <div className={styles.education}>
         <h2 className={styles.title}>Education</h2>
-        <div className={styles.educationCenter}>
-          <div className={styles.singleEducation}>
-            {education?.message.map((item) => (
+        {education?.message.map((item) => (
+          <div className={styles.educationCenter}>
+            <div className={styles.singleEducation}>
               <p key={item._id}>{item.education}</p>
-            ))}
+            </div>
           </div>
-          {/* <div className={styles.singleEducation}>
-            <p>
-              Senior Secondary High School- Happy Valley School Agiripalli
-              Andhra Pradesh
-            </p>
-          </div>
-          <div className={styles.singleEducation}>
-            <p>
-              B.Tech-Computer Science Engineering from BML Munjal University
-            </p>
-          </div> */}
-        </div>
+        ))}
       </div>
     </div>
   );
