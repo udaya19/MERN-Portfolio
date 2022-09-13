@@ -14,6 +14,7 @@ const EditAbout = () => {
         const res = await (await axios.get(`/about/${params.id}`)).data;
         console.log(res);
         setAbout(res.about.about);
+        setMessage(res.message);
       } catch (error) {
         console.log(error);
       }
