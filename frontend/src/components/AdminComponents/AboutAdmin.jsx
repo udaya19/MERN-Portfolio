@@ -23,12 +23,24 @@ const AboutAdmin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const postAbout = { about };
-    const res = await axios.post("/about/add ", postAbout);
+    const res = await axios.post("/about/add ", { about });
     window.location.reload(true);
     console.log(res);
   };
-
+  const deleteAbout = async (id) => {
+    try {
+      const res = await axios.delete(`/about/delete/${id}`);
+      console.log(res);
+      window.location.reload(true);
+      setMessageCond(true);
+      setMessage(`${res.data.message}`);
+      setTimeout(() => {
+        setMessageCond(false);
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className={styles.sameComponent}>
       <div className={styles.sameForm}>
@@ -56,22 +68,28 @@ const AboutAdmin = () => {
                 </span>
               </Link>
               <span className={styles.deleteIcon}>
-                <i className="fas fa-trash"></i>
+                <i
+                  className="fas fa-trash"
+                  onClick={() => {
+                    deleteAbout(item._id);
+                  }}
+                  style={{ cursor: "pointer" }}
+                ></i>
               </span>
             </div>
             {item.about}
           </div>
         ))}
+        <h3
+          className={
+            messageCond
+              ? `${styles.newDelete} ${styles.itemDeleteTab}`
+              : `${styles.itemDeleteTab}`
+          }
+        >
+          {message}
+        </h3>
       </div>
-      <h3
-        className={
-          setMessageCond
-            ? `${styles.newDelete} ${styles.itemDeleteTab}`
-            : `${styles.itemDeleteTab}`
-        }
-      >
-        {message}
-      </h3>
     </div>
   );
 };

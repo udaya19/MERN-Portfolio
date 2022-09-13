@@ -17,7 +17,7 @@ import EditEducation from "./components/EditComponents/EditEducation";
 import EditExperience from "./components/EditComponents/EditExperience";
 import EditProjects from "./components/EditComponents/EditProjects";
 import { Routes, Route } from "react-router-dom";
-import { Element } from "react-scroll";
+// import { Element } from "react-scroll";
 function App() {
   return (
     <div className="App">
@@ -59,6 +59,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/admin" element={<Admin />} />
+      </Routes>
+      <Routes>
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Routes>
         <Route path="/edit/:id" element={<EditAbout />} />
