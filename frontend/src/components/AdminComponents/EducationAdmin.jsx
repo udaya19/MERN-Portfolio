@@ -1,7 +1,23 @@
 import React from "react";
 import styles from "./styles/admin.module.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 const EducationAdmin = () => {
+  const [education, setEducation] = useState();
+  useEffect(() => {
+    const fetchEducation = async () => {
+      try {
+        const response = (await axios.get("/education")).data;
+        console.log(response);
+        setEducation(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchEducation();
+  }, []);
   return (
     <div className={styles.sameComponent}>
       <div className={styles.sameForm}>
@@ -27,7 +43,9 @@ const EducationAdmin = () => {
             </div>
           </div>
           <div className={styles.singleEducation}>
-            <p>Web development</p>
+            {education?.message.map((item) => (
+              <p key={item._id}>{item.education}</p>
+            ))}
           </div>
           {/* <h3 className={styles.itemDeleteTab}>The message</h3> */}
         </div>
