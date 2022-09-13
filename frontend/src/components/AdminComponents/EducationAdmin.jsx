@@ -25,6 +25,11 @@ const EducationAdmin = () => {
     console.log(res);
     window.location.reload(true);
   };
+  const handleDelete = async (id) => {
+    const response = await axios.delete(`/education/delete/${id}`);
+    console.log(response);
+    window.location.reload(true);
+  };
   return (
     <div className={styles.sameComponent}>
       <div className={styles.sameForm}>
@@ -51,7 +56,13 @@ const EducationAdmin = () => {
                   </span>
                 </Link>
                 <span className={styles.deleteIcon}>
-                  <i className="fas fa-trash"></i>
+                  <i
+                    className="fas fa-trash"
+                    onClick={() => {
+                      handleDelete(item._id);
+                    }}
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </span>
               </div>
             </div>
