@@ -50,7 +50,7 @@ const EducationAdmin = () => {
           <div className={styles.aboutInfo} key={item._id}>
             <div className={styles.sameAdmin}>
               <div className={styles.icons}>
-                <Link to="/editEducation">
+                <Link to={`/editEducation/${item._id}`}>
                   <span className={styles.editIcon}>
                     <i className="fas fa-edit"></i>
                   </span>
