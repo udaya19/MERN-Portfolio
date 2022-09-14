@@ -22,9 +22,9 @@ const Education = () => {
       <div className={styles.education}>
         <h2 className={styles.title}>Education</h2>
         {education?.message.map((item) => (
-          <div className={styles.educationCenter}>
+          <div className={styles.educationCenter} key={item._id}>
             <div className={styles.singleEducation}>
-              <p key={item._id}>{item.education}</p>
+              <p>{item.education}</p>
             </div>
           </div>
         ))}
