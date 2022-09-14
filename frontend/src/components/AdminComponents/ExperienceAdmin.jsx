@@ -27,6 +27,15 @@ const ExperienceAdmin = () => {
       console.log(error);
     }
   };
+  const handleDelete = async (id) => {
+    try {
+      const res = await axios.delete(`/experience/delete/${id}`);
+      console.log(res);
+      window.location.reload(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className={styles.sameComponent}>
       <div className={styles.sameForm}>
@@ -48,7 +57,13 @@ const ExperienceAdmin = () => {
                   </span>
                 </Link>
                 <span className={styles.deleteIcon}>
-                  <i className="fas fa-trash"></i>
+                  <i
+                    className="fas fa-trash"
+                    onClick={() => {
+                      handleDelete(item._id);
+                    }}
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </span>
               </div>
               <div className={styles.singleExperience}>
