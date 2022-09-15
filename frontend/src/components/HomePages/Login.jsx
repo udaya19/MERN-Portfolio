@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles/login.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 // import Register from './Register';
 const Login = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
+  const [err, setErr] = useState("");
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+    setErr("");
+  };
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/user/login", {
+        email: user.email,
+        password: user.password,
+      });
+      console.log(res.data);
+      setUser({ name: "", email: "", password: "" });
+      setErr(res.data.message);
+      navigate("/admin");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <div className={styles.login}>
@@ -10,7 +34,8 @@ const Login = () => {
           <h3>Login for Admin</h3>
         </div>
         <div className={styles.loginCenter}>
-          <form action="">
+          <form action="" onSubmit={loginSubmit}>
+            <p>{err}</p>
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -18,6 +43,8 @@ const Login = () => {
               placeholder="Enter email"
               name="email"
               required="true"
+              value={user.email}
+              onChange={onChangeInput}
             />
             <label htmlFor="password">Password</label>
             <input
@@ -26,12 +53,14 @@ const Login = () => {
               placeholder="Enter password"
               name="password"
               required="true"
+              value={user.password}
+              onChange={onChangeInput}
             />
             <button type="submit" className={styles.loginBtn}>
               Login
             </button>
             <Link to="/">
-              <button className={styles.loginBtn}>Back To Home</button>
+              <button className={styles.loginBtn}>Home</button>
             </Link>
           </form>
         </div>
