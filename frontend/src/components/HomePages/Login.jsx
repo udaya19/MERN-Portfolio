@@ -21,10 +21,11 @@ const Login = () => {
       });
       console.log(res.data);
       setUser({ name: "", email: "", password: "" });
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
       setErr(res.data.message);
       navigate("/admin");
     } catch (error) {
-      console.log(error);
+      err.res.data.message && setErr(err.res.data.message);
     }
   };
   return (
