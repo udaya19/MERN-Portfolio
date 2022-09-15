@@ -108,7 +108,7 @@ const ProjectsAdmin = () => {
       </div>
       <div className={styles.sameItem}>
         {projects?.projects.map((item) => (
-          <div className={styles.aboutInfo}>
+          <div className={styles.aboutInfo} key={item._id}>
             <div className={styles.projectAdmin}>
               <div className={styles.icons}>
                 <Link to="/editProject">

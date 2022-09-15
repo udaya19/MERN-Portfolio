@@ -19,6 +19,7 @@ const NavBar = () => {
   const logout = async () => {
     localStorage.clear();
     await axios.get("/user/logout");
+    window.location.reload(true);
   };
   // const scrollToElement = (element) => {
   //   scroller.scrollTo(element, {
@@ -90,15 +91,33 @@ const NavBar = () => {
                 <Link  to="/"  onClick={() => scrollToElement("Home")}>Contact</Link>
               </li> */}
 
-              <li className={styles.adminLi}>
+              {/* <li className={styles.adminLi}>
                 <Link to="/admin">Admin</Link>
               </li>
               <li>
                 <Link to="/" onClick={logout}>
                   Logout
                 </Link>
-                <Link to="/login">Login</Link>
               </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li> */}
+              {user ? (
+                <>
+                  <li className={styles.adminLi}>
+                    <Link to="/admin">Admin</Link>
+                  </li>
+                  <li>
+                    <Link to="/" onClick={logout}>
+                      Logout
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

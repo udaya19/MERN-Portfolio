@@ -24,6 +24,7 @@ const Login = () => {
       localStorage.setItem("currentUser", JSON.stringify(res.data));
       setErr(res.data.message);
       navigate("/admin");
+      window.location.reload(true);
     } catch (error) {
       err.res.data.message && setErr(err.res.data.message);
     }
