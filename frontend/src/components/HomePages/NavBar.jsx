@@ -2,8 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/navbar.module.css";
+import axios from "axios";
 // import { scroller } from "react-scroll";
 const NavBar = () => {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(user);
   const [toggle, setToggle] = useState(false);
   const actToggle = () => {
     setToggle(!toggle);
@@ -12,6 +15,10 @@ const NavBar = () => {
     if (toggle === true) {
       setToggle(false);
     }
+  };
+  const logout = async () => {
+    localStorage.clear();
+    await axios.get("/user/logout");
   };
   // const scrollToElement = (element) => {
   //   scroller.scrollTo(element, {
@@ -74,9 +81,7 @@ const NavBar = () => {
                 <Link to="/">Education</Link>
               </li>
               <li>
-                <Link to="/" n>
-                  Experience
-                </Link>
+                <Link to="/">Experience</Link>
               </li>
               <li>
                 <Link to="/">Projects</Link>
@@ -84,10 +89,14 @@ const NavBar = () => {
               {/* <li>
                 <Link  to="/"  onClick={() => scrollToElement("Home")}>Contact</Link>
               </li> */}
+
               <li className={styles.adminLi}>
-                <Link to="/">Admin</Link>
+                <Link to="/admin">Admin</Link>
               </li>
               <li>
+                <Link to="/" onClick={logout}>
+                  Logout
+                </Link>
                 <Link to="/login">Login</Link>
               </li>
             </ul>
