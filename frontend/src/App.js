@@ -19,6 +19,8 @@ import EditProjects from "./components/EditComponents/EditProjects";
 import { Routes, Route } from "react-router-dom";
 // import { Element } from "react-scroll";
 function App() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+
   return (
     <div className="App">
       <NavBar />
@@ -57,9 +59,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Experience />} />
       </Routes>
-      <Routes>
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      {user ? (
+        <Routes>
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      )}
+
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>

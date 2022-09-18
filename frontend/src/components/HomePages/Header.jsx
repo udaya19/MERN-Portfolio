@@ -1,23 +1,23 @@
-import React from 'react';
-import styles from './styles/header.module.css';
-import Particles from 'react-tsparticles';
-import TypeWriter from 'typewriter-effect';
-import {loadFull} from 'tsparticles';
-import { useCallback } from 'react';
+import React from "react";
+import styles from "./styles/header.module.css";
+// import Particles from 'react-tsparticles';
+import TypeWriter from "typewriter-effect";
+// import {loadFull} from 'tsparticles';
+// import { useCallback } from 'react';
 const Header = () => {
-    const particlesInit = useCallback(async (engine) => {
-        console.log(engine);
-        await loadFull(engine);
-    }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //     console.log(engine);
+  //     await loadFull(engine);
+  // }, []);
 
-    const particlesLoaded = useCallback(async (container) => {
-        await console.log(container);
-    }, []);
-    return ( 
+  // const particlesLoaded = useCallback(async (container) => {
+  //     await console.log(container);
+  // }, []);
+  return (
     <div>
-        <div className={styles.header}>
-            <div className={styles.particle}>
-                <Particles 
+      <div className={styles.header}>
+        <div className={styles.particle}>
+          {/* <Particles 
                    className={styles.particleComp}
                    height='400px'
                    width='100%'
@@ -79,48 +79,50 @@ const Header = () => {
                         // },
                       },
                    }}
-                 />
-                 <div className={styles.fullName}>
-                    <h1>
-                        <TypeWriter 
-                            options={{
-                                strings:['Udaya','Kiran'],
-                                autoStart:true,
-                                loop:true
-                            }} 
-                        />
-                    </h1>
-                 </div>
-            </div>
+                 /> */}
+          <div className={styles.fullName}>
+            <h1>
+              <TypeWriter
+                options={{
+                  strings: ["Udaya", "Kiran"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </h1>
+          </div>
         </div>
-        <div className={styles.personalInfo}>
-            <div className={styles.personalInfoCenter}>
-                <div className={styles.personalInfoDetails}>
-                    <div className={styles.info}>
-                        <label htmlFor='name'>Full Name:</label>
-                        <h4>Gonuguntla Udaya Kiran</h4>
-                    </div>
-                    <div className={styles.info}>
-                        <label htmlFor='occupation'>Occupation:</label>
-                        <h4>Web Deve<b>love</b>per</h4>
-                    </div>
-                    <div className={styles.info}>
-                        <label htmlFor='email'>Email:</label>
-                        <h4>gudaya2002@gmail.com</h4>
-                    </div>
-                </div>
-                <div className={styles.personalInfoImage}>
-                    <img 
-                        src='https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-1024.png' 
-                        alt='Profile' 
-                        width='100px' 
-                        height='100px' 
-                    />
-                </div>
+      </div>
+      <div className={styles.personalInfo}>
+        <div className={styles.personalInfoCenter}>
+          <div className={styles.personalInfoDetails}>
+            <div className={styles.info}>
+              <label htmlFor="name">Full Name:</label>
+              <h4>Gonuguntla Udaya Kiran</h4>
             </div>
+            <div className={styles.info}>
+              <label htmlFor="occupation">Occupation:</label>
+              <h4>
+                Web Deve<b>love</b>per
+              </h4>
+            </div>
+            <div className={styles.info}>
+              <label htmlFor="email">Email:</label>
+              <h4>gudaya2002@gmail.com</h4>
+            </div>
+          </div>
+          <div className={styles.personalInfoImage}>
+            <img
+              src="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-1024.png"
+              alt="Profile"
+              width="100px"
+              height="100px"
+            />
+          </div>
         </div>
-    </div> 
-    );
-}
- 
+      </div>
+    </div>
+  );
+};
+
 export default Header;

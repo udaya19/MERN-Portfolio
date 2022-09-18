@@ -1,33 +1,36 @@
-import React from 'react';
-import styles from './styles/projects.module.css'
+import React, { useEffect, useState } from "react";
+import styles from "./styles/projects.module.css";
+// import { Link } from "react-router-dom";
+import axios from "axios";
 const Projects = () => {
-    return ( 
+  const [projects, setProjects] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = (await axios.get("/projects")).data;
+      console.log(res);
+      setProjects(res);
+    };
+    fetchData();
+  }, []);
+  return (
     <div className={styles.mainContainer}>
-        <div className={styles.projects}>
-            <h2 className={styles.title}>
-                Projects
-            </h2>
-            <div className={styles.projectsCenter}>
-                <div className={styles.singleProject}>
-                    <div className={styles.singleProjectImg}>
-                        <a href="https://udaya19.github.io/Portfolio_Udaya_Kiran/app.html">
-                            <img
-                                src='https://udaya19.github.io/Portfolio_Udaya_Kiran/image/macbook_mouse.jpg'
-                                alt='Project'
-                            />
-                        </a>
-                    </div>
-                    <div className={styles.singleProjectInfo}>
-                        <h3>Static Portfolio Website</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem hic dolore, officia expedita dolorum consequuntur excepturi incidunt consectetur earum nisi sapiente nostrum inventore rerum asperiores sed eum voluptatum delectus cum.
-                        </p>
-                    </div>
-                </div>
+      <div className={styles.projects}>
+        <h2 className={styles.title}>Projects</h2>
+        {projects?.projects.map((item) => (
+          <div className={styles.projectsCenter} key={item._id}>
+            <div className={styles.singleProject}>
+              <div className={styles.singleProjectInfo}>
+                <a href={item.link}>
+                  <h3>{item.title}</h3>
+                </a>
+                <p>{item.description}</p>
+              </div>
             </div>
-        </div>
-    </div> 
-    );
-}
- 
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default Projects;

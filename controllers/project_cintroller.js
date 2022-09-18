@@ -1,4 +1,3 @@
-const { findByIdAndUpdate } = require("../models/project");
 const Project = require("../models/project");
 
 exports.getProjects = async (req, res) => {
@@ -18,19 +17,19 @@ exports.getProjects = async (req, res) => {
 
 exports.postProject = async (req, res) => {
   try {
-    const { title, description } = req.body;
     const newProject = new Project({
-      title,
-      description,
+      title: req.body.title,
+      description: req.body.description,
+      link: req.body.link,
     });
     await newProject.save();
-    return res.json(200, {
+    res.json(200, {
+      message: "Project added succesfully",
       success: true,
-      message: "Product added successfully",
     });
   } catch (error) {
     return res.json(500, {
-      message: error.message,
+      message: error,
       success: false,
     });
   }
@@ -59,10 +58,11 @@ exports.getProjectById = async (req, res) => {
 
 exports.updateProject = async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, link } = req.body;
     const project = await Project.findByIdAndUpdate(req.params.id, {
       title,
       description,
+      link,
     });
     if (!project) {
       return res.json(400, {
