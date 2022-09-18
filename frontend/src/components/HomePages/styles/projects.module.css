@@ -22,6 +22,12 @@
 
 .singleProjectInfo h3{
     color: rgb(9,93,119);
+    width: fit-content;
+}
+
+.singleProjectInfo h3:hover{
+    color: rgb(9,93,119,0.7);
+    /* border-bottom: 1px solid rgb(9,93,119); */
 }
 
 .singleProjectInfo p{
@@ -32,8 +38,5 @@
 @media screen and (min-width:800px) {
     .singleProject{
         display: flex;
-    }
-    .singleProjectInfo{
-        margin-left: -5%;
     }
 }

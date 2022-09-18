@@ -16,9 +16,10 @@ const Projects = () => {
     <div className={styles.mainContainer}>
       <div className={styles.projects}>
         <h2 className={styles.title}>Projects</h2>
-        {projects?.projects.map((item) => (
-          <div className={styles.projectsCenter} key={item._id}>
-            <div className={styles.singleProject}>
+
+        <div className={styles.projectsCenter}>
+          {projects?.projects.map((item) => (
+            <div className={styles.singleProject} key={item._id}>
               <div className={styles.singleProjectInfo}>
                 <a href={item.link}>
                   <h3>{item.title}</h3>
@@ -26,8 +27,8 @@ const Projects = () => {
                 <p>{item.description}</p>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

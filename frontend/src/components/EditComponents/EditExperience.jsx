@@ -19,8 +19,10 @@ const EditExperience = () => {
       const res = await axios.put(`/experience/update/${params.id}`, {
         experience,
       });
-      navigate("/admin");
       console.log(res);
+      setTimeout(() => {
+        navigate("/admin");
+      }, 2000);
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +33,6 @@ const EditExperience = () => {
         <div className={styles.sameComponent}>
           <div className={styles.sameForm}>
             <form action="" onSubmit={handleUpdate}>
-              <h3 className={styles.updated}>Updated</h3>
               <label htmlFor="editExperience">Experience</label>
               <input
                 type="text"
