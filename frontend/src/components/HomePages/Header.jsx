@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles/header.module.css";
+import uday from "../../images/me.jpeg";
 // import Particles from 'react-tsparticles';
 import TypeWriter from "typewriter-effect";
 // import {loadFull} from 'tsparticles';
@@ -112,12 +113,7 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.personalInfoImage}>
-            <img
-              src="https://cdn0.iconfinder.com/data/icons/seo-web-4-1/128/Vigor_User-Avatar-Profile-Photo-01-1024.png"
-              alt="Profile"
-              width="100px"
-              height="100px"
-            />
+            <img src={uday} alt="ProfilePhoto" width="100px" height="100px" />
           </div>
         </div>
       </div>

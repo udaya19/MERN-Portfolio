@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles/navbar.module.css";
+import uday from "../../images/me.jpeg";
 import axios from "axios";
 // import { scroller } from "react-scroll";
 const NavBar = () => {
@@ -35,11 +36,7 @@ const NavBar = () => {
         <nav>
           <div className={styles.logoBtn}>
             <Link to="/">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                className={styles.logoImg}
-                alt="logo"
-              />
+              <img src={uday} className={styles.logoImg} alt="logo" />
             </Link>
             <div className={styles.btn} onClick={actToggle}>
               <div
