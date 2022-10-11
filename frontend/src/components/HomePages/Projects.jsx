@@ -18,7 +18,7 @@ const Projects = () => {
         <h2 className={styles.title}>Projects</h2>
 
         <div className={styles.projectsCenter}>
-          {projects?.projects.map((item) => (
+          {projects?.projects?.map((item) => (
             <div className={styles.singleProject} key={item._id}>
               <div className={styles.singleProjectInfo}>
                 <a href={item.link}>
