@@ -15,7 +15,7 @@ db.once("open", () => console.log("Connected to database"));
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
-// app.use(cors());
+app.use(cors());
 app.use(
   fileUpload({
     useTempFiles: true,
